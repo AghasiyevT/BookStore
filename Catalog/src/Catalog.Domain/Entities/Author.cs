@@ -10,8 +10,10 @@ public class Author : Entity, IAggregateRoot
     public FullName Name { get; private set; }
     public Email Email { get; private set; }
     public Bio Bio { get; private set; }
-    private readonly List<BookId> _bookIds = new();
-    public IReadOnlyCollection<BookId> BookIds => _bookIds.AsReadOnly();
+
+
+    private readonly List<AuthorBook> _authorBooks = new();
+    public IReadOnlyCollection<AuthorBook> AuthorBooks => _authorBooks.AsReadOnly();
 
     private Author() { }
 
@@ -30,19 +32,19 @@ public class Author : Entity, IAggregateRoot
         AddDomainEvent(new AuthorRenamedDomainEvent(Id, newName));
     }
 
-    public void AddBook(BookId bookId)
+    public void LinkBook(BookId bookId)
     {
-        if (!_bookIds.Contains(bookId))
-        {
-            _bookIds.Add(bookId);
-            AddDomainEvent(new AuthorBookAddedDomainEvent(Id, bookId));
-        }
+        if (_authorBooks.Any(ab => ab.BookId == bookId)) return;
+        _authorBooks.Add(new AuthorBook(Id, bookId));
+        AddDomainEvent(new AuthorBookAddedDomainEvent(Id, bookId));
     }
 
-    public void RemoveBook(BookId bookId)
+    public void UnlinkBook(BookId bookId)
     {
-        if (_bookIds.Remove(bookId))
+        var link = _authorBooks.FirstOrDefault(ab => ab.BookId == bookId);
+        if (link != null)
         {
+            _authorBooks.Remove(link);
             AddDomainEvent(new AuthorBookRemovedDomainEvent(Id, bookId));
         }
     }

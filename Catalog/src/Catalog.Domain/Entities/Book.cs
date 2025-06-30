@@ -15,6 +15,9 @@ public class Book : Entity, IAggregateRoot
     public BookCategory Category { get; private set; }
     public int StockQuantity { get; private set; }
 
+    private readonly List<AuthorBook> _authorBooks = new();
+    public IReadOnlyCollection<AuthorBook> AuthorBooks => _authorBooks.AsReadOnly();
+
     private Book() { }
 
     public Book(BookId id, string title, AuthorId authorId, ISBN isbn, decimal price, BookCategory category, int stockQuantity)
