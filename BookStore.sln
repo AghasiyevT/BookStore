@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{11E9B1D5-4D01-495D-B376-D129F2E7ED4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{67420793-9B79-41B6-892C-E3201AC7782B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8763BA88-CB4D-4877-A89F-606F2E3480B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Domain", "Catalog\src\Catalog.Domain\Catalog.Domain.csproj", "{66395955-9CE9-4360-9B46-16C26390639E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Application", "Catalog\src\Catalog.Application\Catalog.Application.csproj", "{B7D1F329-CC7B-48DD-83DF-87B6B43A186D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Infrastructure", "Catalog\src\Catalog.Infrastructure\Catalog.Infrastructure.csproj", "{42C70760-885B-4376-8108-45DCC86C75B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Function", "Catalog\src\Catalog.Function\Catalog.Function.csproj", "{484467C0-1EBF-4788-9A6C-F1CF3E78DC50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Domain.UnitTests", "Catalog\test\Catalog.Domain.UnitTests\Catalog.Domain.UnitTests.csproj", "{77911320-FF78-43D0-B7D3-C4BCF55250F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66395955-9CE9-4360-9B46-16C26390639E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66395955-9CE9-4360-9B46-16C26390639E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66395955-9CE9-4360-9B46-16C26390639E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66395955-9CE9-4360-9B46-16C26390639E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7D1F329-CC7B-48DD-83DF-87B6B43A186D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7D1F329-CC7B-48DD-83DF-87B6B43A186D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7D1F329-CC7B-48DD-83DF-87B6B43A186D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7D1F329-CC7B-48DD-83DF-87B6B43A186D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42C70760-885B-4376-8108-45DCC86C75B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42C70760-885B-4376-8108-45DCC86C75B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42C70760-885B-4376-8108-45DCC86C75B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42C70760-885B-4376-8108-45DCC86C75B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{484467C0-1EBF-4788-9A6C-F1CF3E78DC50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{484467C0-1EBF-4788-9A6C-F1CF3E78DC50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{484467C0-1EBF-4788-9A6C-F1CF3E78DC50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{484467C0-1EBF-4788-9A6C-F1CF3E78DC50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77911320-FF78-43D0-B7D3-C4BCF55250F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77911320-FF78-43D0-B7D3-C4BCF55250F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77911320-FF78-43D0-B7D3-C4BCF55250F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77911320-FF78-43D0-B7D3-C4BCF55250F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{67420793-9B79-41B6-892C-E3201AC7782B} = {11E9B1D5-4D01-495D-B376-D129F2E7ED4D}
+		{8763BA88-CB4D-4877-A89F-606F2E3480B8} = {11E9B1D5-4D01-495D-B376-D129F2E7ED4D}
+		{66395955-9CE9-4360-9B46-16C26390639E} = {67420793-9B79-41B6-892C-E3201AC7782B}
+		{B7D1F329-CC7B-48DD-83DF-87B6B43A186D} = {67420793-9B79-41B6-892C-E3201AC7782B}
+		{42C70760-885B-4376-8108-45DCC86C75B8} = {67420793-9B79-41B6-892C-E3201AC7782B}
+		{484467C0-1EBF-4788-9A6C-F1CF3E78DC50} = {67420793-9B79-41B6-892C-E3201AC7782B}
+		{77911320-FF78-43D0-B7D3-C4BCF55250F4} = {8763BA88-CB4D-4877-A89F-606F2E3480B8}
+	EndGlobalSection
+EndGlobal
