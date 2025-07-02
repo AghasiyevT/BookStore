@@ -2,13 +2,18 @@
 
 public sealed class BookId
 {
-    public Guid Value { get; private set; }
-    public BookId(Guid value)
+    public Guid Guid { get; }
+
+    private BookId(Guid guid)
     {
-        if (value == Guid.Empty)
-            throw new ArgumentException("BookId cannot be empty.", nameof(value));
-        Value = value;
+        Guid = guid;
     }
-    public override string ToString() => Value.ToString();
+
+    public static BookId CreateNew() => new BookId(Guid.NewGuid());
+
+    public override string ToString() => Guid.ToString();
+
+
+
 }
 

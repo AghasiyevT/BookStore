@@ -8,7 +8,7 @@
         {
             Guid = guid;
         }
-
+        
         public static AuthorId CreateNew() => new AuthorId(Guid.NewGuid());
 
         public override string ToString() => Guid.ToString();

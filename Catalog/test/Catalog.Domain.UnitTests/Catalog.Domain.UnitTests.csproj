@@ -21,8 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="TestHelpers\" />
+    <ProjectReference Include="..\..\src\Catalog.Domain\Catalog.Domain.csproj" />
   </ItemGroup>
 
 </Project>
