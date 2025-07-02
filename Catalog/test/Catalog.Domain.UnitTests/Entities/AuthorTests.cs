@@ -34,7 +34,7 @@ public class AuthorTests
         Assert.Equal(authorId, authorCreatedEvent.AuthorId);
     }
 
-    [Fact]
+    [Fact(DisplayName = "AuthorBook should be added and AuthorBookAddedDomainEvent should raise")]
     public void LinkBook_WhenBookNotLinked_AddsAuthorBookAndRaisesBookAddedEvent()
     {
         // Act
@@ -45,7 +45,7 @@ public class AuthorTests
         Assert.Contains(_author.DomainEvents, e => e is AuthorBookAddedDomainEvent bookAddedEvent && bookAddedEvent.BookId == _bookId && bookAddedEvent.AuthorId == _author.Id);
     }
 
-    [Fact]
+    [Fact(DisplayName = "AuthorBook should not be added for preventing duplicate")]
     public void LinkBook_WhenBookAlreadyLinked_DoesNotDuplicateOrRaiseEvent()
     {
         // Arrange
@@ -60,7 +60,7 @@ public class AuthorTests
         Assert.Null(_author.DomainEvents.OfType<AuthorBookAddedDomainEvent>().FirstOrDefault());
     }
 
-    [Fact]
+    [Fact(DisplayName = "AuthorBook should be unlinked and AuthorBookRemovedDomainEvent should raise")]
     public void UnlinkBook_WhenBookUnLinked_RemovesBookAndRaisesBookRemovedEvent()
     {
         // Arrange
@@ -76,7 +76,7 @@ public class AuthorTests
         Assert.Contains(_author.DomainEvents, ab => ab is AuthorBookRemovedDomainEvent authorBookRemovedEvent && authorBookRemovedEvent.BookId == _bookId && authorBookRemovedEvent.AuthorId == _author.Id);
     }
 
-    [Fact]
+    [Fact(DisplayName = "AuthorBook should not be unlinked")]
     public void UnlinkBook_WhenBookDoesNotLinkedYet_DoesNotUnlinksOrRaiseEvent()
     {
         // Arrange

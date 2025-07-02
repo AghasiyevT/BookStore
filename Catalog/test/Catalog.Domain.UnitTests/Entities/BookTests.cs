@@ -12,7 +12,7 @@ public class BookTests
         _book = BookHelper.CreateTestBook();
     }
 
-    [Fact]
+    [Fact(DisplayName = "BookCreatedDomainEvent should raise")]
     public void Constructor_WhenBookIsCreated_RaisesCreatedEvent()
     {
         //Assert
@@ -20,7 +20,7 @@ public class BookTests
         Assert.Contains(_book.DomainEvents, e => e is BookCreatedDomainEvent);
     }
 
-    [Fact]
+    [Fact(DisplayName = "Book Quantity has to be changed and BookStockUpdatedDomainEvent should raise")]
     public void UpdateStockQuantity_WhenQuantityAdded_UpdatesStockAndRaisesEvent()
     {
         // Arrange
@@ -37,7 +37,7 @@ public class BookTests
         Assert.Contains(_book.DomainEvents, e => e is BookStockUpdatedDomainEvent);
     }
 
-    [Fact]
+    [Fact(DisplayName = "Book Price has to be cahnged and BookPriceChangedDomainEvent should raise")]
     public void ChangePrice_WhenPriceIsPositive_ChangesPriceAndRaisesEvent()
     {
         //Arrange
@@ -54,7 +54,7 @@ public class BookTests
         Assert.Contains(_book.DomainEvents, e => e is BookPriceChangedDomainEvent);
     }
 
-    [Fact]
+    [Fact(DisplayName = "Has to throw ArgumentException because of negative price")]
     public void ChangePrice_WhenPriceIsNegative_ThrowsArgumentException()
     {
         // Arrange
